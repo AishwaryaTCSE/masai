@@ -1,13 +1,12 @@
 
-const fetchData = new Promise((resolve, reject) => {
-    const success = true; // Simulate success or failure
-    if (success) {
-      resolve("Data fetched successfully!");
-    } else {
-      reject("Error fetching data.");
-    }
+function timer(duration, onComplete) {
+    setTimeout(() => {
+      onComplete(`Timer of ${duration} ms finished`);
+    }, duration);
+  }
+  
+  // Example usage:
+  timer(2000, function(message) {
+    console.log(message);
   });
   
-  fetchData
-    .then(result => console.log(result))
-    .catch(error => console.error(error));
